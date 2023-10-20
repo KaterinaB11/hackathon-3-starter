@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AnimalController;
+use App\Http\Controllers\AnimalCRUDController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,11 +21,11 @@ Route::get('/', function () {
 
 Route::get('/animals', [AnimalController::class, 'index']);
 
-Route::get('/search', 'AnimalController@search')->name('search');
+Route::get('/search', [AnimalController::class, 'search'])->name('search');
 // Movie CRUD
 // Route::get('/movies/create'
 Route::get('/animals/create', [AnimalCRUDController::class, 'create'])->name('animals.create');
-// Route::post('/movies', [AnimalCRUDController::class, 'store'])->name('movies.store');
+Route::post('/animals', [AnimalCRUDController::class, 'store'])->name('animals.store');
 
 // Route::get('/movies/{movie}/edit', [AnimalCRUDController::class, 'edit'])->whereNumber('movie')->name('movies.edit');
 // Route::put('/movies/{movie}', [AnimalCRUDController::class, 'update'])->whereNumber('movie')->name('movies.update');
