@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 // Movie CRUD
 // Route::get('/movies/create'
-Route::get('/movies/create', [AnimalCRUDController::class, 'create'])->name('movies.create');
+Route::get('/animals/create', [AnimalCRUDController::class, 'create'])->name('animals.create');
 // Route::post('/movies', [AnimalCRUDController::class, 'store'])->name('movies.store');
 
 // Route::get('/movies/{movie}/edit', [AnimalCRUDController::class, 'edit'])->whereNumber('movie')->name('movies.edit');
