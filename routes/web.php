@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Movie CRUD
+// Route::get('/movies/create'
+Route::get('/movies/create', [AnimalCRUDController::class, 'create'])->name('movies.create');
+// Route::post('/movies', [AnimalCRUDController::class, 'store'])->name('movies.store');
+
+// Route::get('/movies/{movie}/edit', [AnimalCRUDController::class, 'edit'])->whereNumber('movie')->name('movies.edit');
+// Route::put('/movies/{movie}', [AnimalCRUDController::class, 'update'])->whereNumber('movie')->name('movies.update');
+// Route::delete('/movies/{movie}', [AnimalCRUDController::class, 'destroy'])->whereNumber('movie')->name('movies.destroy');
