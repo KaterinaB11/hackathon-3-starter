@@ -21,13 +21,19 @@ class AnimalController extends Controller
     }
 
     public function search(Request $request)
-    {
-        $query = $request->input('query');
-        
-        $animals = Animal::where('name', 'like', '%'.$query.'%')->get();
-        $owners = Owner::where('first_name', 'like', '%'.$query.'%')->orWhere('surname', 'like', '%'.$query.'%')->get();
-        
-        return view('search.results', compact('animals', 'owners'));
-    }
+{
+    $query = $request->input('query');
+    
+    // Search for animals with a name that matches the query
+    $animals = Animal::where('name', 'like', '%'.$query.'%')->paginate(10);
+
+    // Search for owners with first name or surname that match the query
+    $owners = Owner::where(function($queryBuilder) use ($query) {
+        $queryBuilder->where('first_name', 'like', '%'.$query.'%')
+                     ->orWhere('surname', 'like', '%'.$query.'%');
+    })->paginate(10);
+
+    return view('search.results', compact('animals', 'owners'));
+}
     
 }

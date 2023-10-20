@@ -11,9 +11,9 @@
 
     <h1>Pets and Owners List</h1>
 
-    <form method="GET" action="{{ route('search') }}">
+    <form method="GET" action="/search">
         @csrf
-        <input type="text" name="query" placeholder="Search by name...">
+        <input type="text" name="search" placeholder="Search by name...">
         <button type="submit">Search</button>
     </form>
 

@@ -20,4 +20,6 @@ Route::get('/', function () {
 
 Route::get('/animals', [AnimalController::class, 'index']);
 
-Route::get('/search', 'AnimalController@search')->name('search');
+Route::get('/search', [AnimalController::class, 'search'])->name('search');
+Route::get('/animal/{animal}', [AnimalController::class, 'show'])->name('animal.show');
+Route::get('/owner/{owner}', [OwnerController::class, 'show'])->name('owner.show');
