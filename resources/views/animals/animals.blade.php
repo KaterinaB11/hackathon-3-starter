@@ -16,7 +16,11 @@
         <input type="text" name="search" placeholder="Search by name...">
         <button type="submit">Search</button>
     </form>
+    <br>
+   
 
+    <a class="custom-button" href="http://www.hackathon.test/animals/create">Create a new patient</a>
+ <br>
     <br>
     <table>
         <thead>
@@ -70,6 +74,16 @@
         .animal-image:hover {
             max-width: 300px;
         }
+        .custom-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #324a63;
+        color: #fff;
+        text-decoration: none;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
     </style>
 </body>
 </html>
