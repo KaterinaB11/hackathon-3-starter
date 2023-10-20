@@ -30,3 +30,5 @@ Route::post('/animals', [AnimalCRUDController::class, 'store'])->name('animals.s
 // Route::get('/movies/{movie}/edit', [AnimalCRUDController::class, 'edit'])->whereNumber('movie')->name('movies.edit');
 // Route::put('/movies/{movie}', [AnimalCRUDController::class, 'update'])->whereNumber('movie')->name('movies.update');
 // Route::delete('/movies/{movie}', [AnimalCRUDController::class, 'destroy'])->whereNumber('movie')->name('movies.destroy');
+Route::get('/animal/{animal}', [AnimalController::class, 'show'])->name('animal.show');
+Route::get('/owner/{owner}', [OwnerController::class, 'show'])->name('owner.show');
